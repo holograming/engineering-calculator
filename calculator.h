@@ -21,6 +21,11 @@ public:
     double cosDeg(double degrees);
     double tanDeg(double degrees);
 
+    // 로그 함수
+    double ln(double x);
+    double log10(double x);
+    double log(double base, double x);
+
 private:
     double degToRad(double degrees);
 };
