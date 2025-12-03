@@ -1,5 +1,6 @@
 #include "calculator.h"
 constexpr double M_PI = 3.14159265358979323846;
+#include <stdexcept>
 
 double Calculator::add(double a, double b) {
     return a + b;
@@ -45,4 +46,8 @@ double Calculator::cosDeg(double degrees) {
 
 double Calculator::tanDeg(double degrees) {
     return std::tan(degToRad(degrees));
+    if (b == 0) {
+        throw std::invalid_argument("Division by zero is not allowed");
+    }
+    return a / b;
 }
