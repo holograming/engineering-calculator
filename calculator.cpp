@@ -1,4 +1,5 @@
 #include "calculator.h"
+#include <stdexcept>
 
 double Calculator::add(double a, double b) {
     return a + b;
@@ -13,5 +14,8 @@ double Calculator::multiply(double a, double b) {
 }
 
 double Calculator::divide(double a, double b) {
-    return a / b;  // TODO: 0으로 나누기 처리 필요
+    if (b == 0) {
+        throw std::invalid_argument("Division by zero is not allowed");
+    }
+    return a / b;
 }
